@@ -1,5 +1,5 @@
 # Como executar em conteiner
-docker build -t port_attack_simul .
-docker run --rm -it --network host port_attack_simul
+1. docker build -t port_attack_simul .
+2. docker run --rm -it --network host port_attack_simul
 
-** a chave "port_attack_simul" pode se refere ao nome da imagem do docker e pode ser alterada, o importante é usar o mesmo no build e no run**
+- Verificar se a chave da imagem python sendo executada no docker é igual a definida no dockerfile
