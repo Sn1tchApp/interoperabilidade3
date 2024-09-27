@@ -1,0 +1,15 @@
+# Utilizando a imagem oficial do Python
+FROM python:3.9-alpine
+
+# Definindo o diretório de trabalho
+WORKDIR /app
+
+# Copiando o arquivo requirements.txt e instalando as dependências
+COPY requirements.txt /app/
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copiando os arquivos do projeto
+COPY . /app
+
+# Comando de execução padrão ao iniciar o container
+CMD ["python", "index.py"]

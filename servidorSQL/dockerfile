@@ -1,0 +1,17 @@
+# Utilizando uma imagem base do Python
+FROM python:3.9-alpine
+
+# Definindo o diretório de trabalho dentro do container
+WORKDIR /app
+
+# Copiando o arquivo requirements.txt para o diretório de trabalho
+COPY requirements.txt /app/
+
+# Instalando as dependências necessárias
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copiando o código da aplicação para o container
+COPY . /app
+
+# Definindo o comando para rodar o servidor Flask
+CMD ["python", "app.py"]
